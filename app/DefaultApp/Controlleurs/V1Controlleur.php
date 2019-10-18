@@ -61,7 +61,8 @@ class V1Controlleur
             ]
         ];
         $reponse=Application::CallAPI("POST","https://apimail.haitisolution.net/apimail/v1/send",$body,array());
-        echo $reponse;
+
+        var_dump($reponse);
     }
 
 }
