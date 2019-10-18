@@ -99,10 +99,10 @@ class Application extends Session
         }
     }
 
-    public static function envoyerEmail($a, $sujet, $contenue, $attachement = "", $reply = "")
+    public static function envoyerEmail($from,$a, $sujet, $contenue, $attachement = "", $reply = "")
     {
         $mail = new Mail($_SESSION['configurationEmail']);
-        return $mail->envoyer($a, $sujet, $contenue, $attachement, $reply);
+        return $mail->envoyer($from,$a, $sujet, $contenue, $attachement, $reply);
     }
 
     public static function ROOT()
@@ -227,6 +227,7 @@ class Application extends Session
                 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
                 break;
         }
+
         $response = curl_exec($curl);
         $data = json_decode($response);
 
@@ -239,7 +240,6 @@ class Application extends Session
                 return ($data);
                 break;
             case 404:
-
                 $error_status = "404: API Not found";
                 break;
             case 500:

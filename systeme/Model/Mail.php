@@ -45,16 +45,13 @@ class Mail
         }
     }
 
-    public function envoyer($to, $sujet, $contenue, $atachement = "", $reply = "")
+    public function envoyer($from,$to, $sujet, $contenue, $atachement = "", $reply = "")
     {
-
         try {
             $mail = $this->configuration();
-            $mail->setFrom(self::$from['email'], self::$from['nom']);
-
+            $mail->setFrom($from['email'], $from['nom']);
             if (is_array($to)) {
                 foreach ($to as $m) {
-                    var_dump($m);
                     $mail->addAddress($m['email'], $m['nom']);
                 }
             }
