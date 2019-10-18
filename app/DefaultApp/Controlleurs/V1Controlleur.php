@@ -29,7 +29,7 @@ class V1Controlleur
         $m=DefaultApp::envoyerEmail($from,$to,$sujet,$contenue);
         if($m=="ok"){
             http_response_code(200);
-            echo json_encode(array("message" => count($to)."Email envoyer avec succes","status"=>"ok"));
+            echo json_encode(array("message" => count($to)." Email envoyer avec succes","status"=>"ok"));
         }else{
             http_response_code(503);
             echo json_encode(array("message" => $m,"status"=>"no"));
@@ -61,7 +61,6 @@ class V1Controlleur
             ]
         ];
         $reponse=Application::CallAPI("POST","https://apimail.haitisolution.net/apimail/v1/send",$body,array());
-        var_dump($reponse);
     }
 
 }
