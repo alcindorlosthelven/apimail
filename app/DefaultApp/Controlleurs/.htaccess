@@ -1,0 +1,4 @@
+AuthUserFile .htpasswd
+AuthName "Imposible d'acceder a ce dossier"
+AuthType Basic
+Require valid-user

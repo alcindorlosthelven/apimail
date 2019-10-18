@@ -1,0 +1,4 @@
+AuthUserFile .htpasswd
+AuthName "Imposible d'acceder"
+AuthType Basic
+Require valid-user
