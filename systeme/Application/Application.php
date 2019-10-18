@@ -229,7 +229,7 @@ class Application extends Session
         }
 
         $response = curl_exec($curl);
-        $data = json_decode($response);
+        $data = json_decode($response,true);
 
         /* Check for 404 (file not found). */
         $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
