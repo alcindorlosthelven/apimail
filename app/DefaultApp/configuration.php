@@ -9,14 +9,14 @@ $database = array(
 
 //configuration email
 $from=array(
-    "email"=>"",
-    "nom"=>""
+    "email"=>"apimail@haitisolution.net",
+    "nom"=>"apimail"
 );
 
 $configurationEmail = array(
-    "host" =>"",
-    "utilisateur" =>"",
-    "motdepasse" =>"",
+    "host" =>"mail.haitisolution.net",
+    "utilisateur" =>"apimail@haitisolution.net",
+    "motdepasse" =>"ruthamar1991",
     "port"=>465,
     "from"=>$from
 );
@@ -26,8 +26,7 @@ $configuration = array(
     "url" => $_GET['url'],
     "database" => $database,
     "configurationEmail"=>$configurationEmail,
-    "dossierProjet" => "mail_api",
+    "dossierProjet" => "apimail",
     "nomApp" => "DefaultApp"
 );
-define("AUTHORIZENET_LOG_FILE", "phplog");
 \systeme\Application\Configuration::addConfiguration($configuration,"DefaultApp");
